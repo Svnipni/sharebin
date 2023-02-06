@@ -29,3 +29,7 @@ Try with smaller files
 
 bactopia --R1 "Downloads/Esters WGD report/DLs/MEGIC_125_B_1.fastq.gz" --R2 "Downloads/Esters WGD report/DLs/MEGIC_125_B_2.fastq.gz" --sample MEGIC_125 --datasets datasets/ --outdir "Downloads/Esters WGD report/DLs/OUT_Single/MEGIC_101" --skip_qc
  
+# No luck
+# Try with some of the tutorials parameters
+
+bactopia --R1 "Downloads/Esters WGD report/DLs/MEGIC_125_B_1.fastq.gz" --R2 "Downloads/Esters WGD report/DLs/MEGIC_125_B_2.fastq.gz" --sample MEGIC_125 --datasets datasets/ --outdir "Downloads/Esters WGD report/DLs/OUT_Single/MEGIC_101" --skip_qc --limit 100 \ --skip_minmer
