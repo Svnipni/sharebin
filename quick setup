@@ -23,5 +23,9 @@ bactopia --R1 "Downloads/Esters WGD report/DLs/MEGIC_101_B_1.fastq.gz" --R2 "Dow
   --skip_qc                     [boolean] The QC step will be skipped and it will be assumed
 
 bactopia --R1 "Downloads/Esters WGD report/DLs/MEGIC_101_B_1.fastq.gz" --R2 "Downloads/Esters WGD report/DLs/MEGIC_101_B_2.fastq.gz" --sample MEGIC_101 --datasets datasets/ --outdir "Downloads/Esters WGD report/DLs/OUT_Single/MEGIC_101" --skip_qc
+# seems to end n error 137. OOM?
 
-  
+Try with smaller files
+
+bactopia --R1 "Downloads/Esters WGD report/DLs/MEGIC_125_B_1.fastq.gz" --R2 "Downloads/Esters WGD report/DLs/MEGIC_125_B_2.fastq.gz" --sample MEGIC_125 --datasets datasets/ --outdir "Downloads/Esters WGD report/DLs/OUT_Single/MEGIC_101" --skip_qc
+ 
