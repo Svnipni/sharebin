@@ -1,8 +1,20 @@
-#I had the best luck setting up Bactopia from WSL2 or Ubuntu using Mamba> https://github.com/conda-forge/miniforge#mambaforge
+# I had the best luck setting up Bactopia from WSL2 or Ubuntu using Mamba> https://github.com/conda-forge/miniforge#mambaforge
 bash Mambaforge-Linux-x86_64.sh
 
-#and installing Bactopia from there> https://github.com/bactopia/bactopia
+# and installing Bactopia from there> https://github.com/bactopia/bactopia
 mamba create -n bactopia -c conda-forge -c bioconda bactopia
 mamba activate bactopia
 bactopia datasets
 
+# seems AMRFinder+ is giving some issues now, so just running 
+amrfinder --update #should work
+
+lets try
+
+bactopia prepare "Downloads/Esters WGD report/DLs"/ > fastqs.txt
+bactopia --samples fastqs.txt --datasets datasets --outdir "Downloads/Esters WGD report/DLs/OUT"
+
+# That's too much to handle for a small laptop.
+# Best to try with single samples first
+
+bactopia --R1 "Downloads/Esters WGD report/DLs/MEGIC_101_B_1.fastq.gz" --R2 "Downloads/Esters WGD report/DLs/MEGIC_101_B_2.fastq.gz" --sample MEGIC_101 --datasets datasets/ --outdir "Downloads/Esters WGD report/DLs/OUT_Single/MEGIC_101"
