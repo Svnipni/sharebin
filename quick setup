@@ -1,0 +1,8 @@
+#I had the best luck setting up Bactopia from WSL2 or Ubuntu using Mamba> https://github.com/conda-forge/miniforge#mambaforge
+bash Mambaforge-Linux-x86_64.sh
+
+#and installing Bactopia from there> https://github.com/bactopia/bactopia
+mamba create -n bactopia -c conda-forge -c bioconda bactopia
+mamba activate bactopia
+bactopia datasets
+
