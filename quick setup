@@ -32,5 +32,12 @@ bactopia --R1 "Downloads/Esters WGD report/DLs/MEGIC_125_B_1.fastq.gz" --R2 "Dow
 # No luck
 # Try with some of the tutorials parameters
 
-bactopia --R1 "Downloads/Esters WGD report/DLs/MEGIC_125_B_1.fastq.gz" --R2 "Downloads/Esters WGD report/DLs/MEGIC_125_B_2.fastq.gz" --sample MEGIC_125 --datasets datasets/ --outdir "Downloads/Esters WGD report/DLs/OUT_Single/MEGIC_101" --skip_qc --skip_minmer
+bactopia datasets --species "Pseudomonas putida" --include_genus
+# Keeps messing up where it left its db, so move home\svni\datasets\antimicrobial-resistance\amrfinderdb-temp content to where amrfinderdb is (usually datasets\antimicrobial-resistance)
 
+bactopia --R1 "Downloads/Esters WGD report/DLs/MEGIC_125_B_1.fastq.gz" --R2 "Downloads/Esters WGD report/DLs/MEGIC_125_B_2.fastq.gz" --sample MEGIC_125 --datasets datasets/ --outdir "Downloads/Esters WGD report/DLs/OUT_Single/MEGIC_101"
+# seems to work on my home rig! Even QC!
+# Ester said 125 is P.putida, so lets try that
+# 
+
+bactopia --R1 "/mnt/d/Dropbox/PhD/Postdoc/MEGIC_125_B_1.fastq.gz" --R2 "/mnt/d/Dropbox/PhD/Postdoc/MEGIC_125_B_2.fastq.gz" --sample MEGIC_125Blast --datasets datasets / --outdir "/mnt/d/Dropbox/PhD/Postdoc/MEGIC_125Blast" --species "Pseudomonas putida" --include_genus
