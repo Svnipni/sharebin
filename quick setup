@@ -35,9 +35,13 @@ bactopia --R1 "Downloads/Esters WGD report/DLs/MEGIC_125_B_1.fastq.gz" --R2 "Dow
 bactopia datasets --species "Pseudomonas putida" --include_genus
 # Keeps messing up where it left its db, so move home\svni\datasets\antimicrobial-resistance\amrfinderdb-temp content to where amrfinderdb is (usually datasets\antimicrobial-resistance)
 
-bactopia --R1 "Downloads/Esters WGD report/DLs/MEGIC_125_B_1.fastq.gz" --R2 "Downloads/Esters WGD report/DLs/MEGIC_125_B_2.fastq.gz" --sample MEGIC_125 --datasets datasets/ --outdir "Downloads/Esters WGD report/DLs/OUT_Single/MEGIC_101"
+bactopia --R1 "Downloads/Esters WGD repor/MEGIC_OUTt/DLs/MEGIC_125_B_1.fastq.gz" --R2 "Downloads/Esters WGD report/DLs/MEGIC_125_B_2.fastq.gz" --sample MEGIC_125 --datasets datasets/ --outdir "Downloads/Esters WGD report/DLs/OUT_Single/MEGIC_101"
 # seems to work on my home rig! Even QC!
 # Ester said 125 is P.putida, so lets try that
 # 
 
 bactopia --R1 "/mnt/d/Dropbox/PhD/Postdoc/MEGIC_125_B_1.fastq.gz" --R2 "/mnt/d/Dropbox/PhD/Postdoc/MEGIC_125_B_2.fastq.gz" --sample MEGIC_125Blast --datasets datasets / --outdir "/mnt/d/Dropbox/PhD/Postdoc/MEGIC_125Blast" --species "Pseudomonas putida" --include_genus
+
+#This run ok. Will need to figure out how to include more target species and if --include_genus actually works when running the pipeline or if it's just an instruction to download more genomes actoss the genus. 
+# another issue is that the work/ and bactopia/ folders get very large, and I only have a 128gb disk to play with
+# I should be able to run the pipeline by referring to the shared online disk, but this can slow things down immensely
