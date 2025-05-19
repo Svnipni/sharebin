@@ -1,0 +1,14 @@
+AMR++ nextflow in bactopia env
+
+mamba activate bactopia #bc bactopia env already had nextflow
+cd Documents/AMRpp/AMRplusplus
+
+nextflow run main_AMR++.nf -profile conda
+nextflow run AMRplusplus/main_AMR++.nf -profile conda --reads "AMRplusplus/data/raw/MEGIC/*_{1,2}.fastq.gz" #run on reads (Fw1 Rv2) in folder
+#still need to run on all 11 MEGIC Pseudom, only done on 9. 216_1_1C_1 (265) and 256_1C_2 (289) were missing. Now copied to dir above
+
+nextflow run AMRplusplus/main_AMR++.nf -profile conda --reads "AMRplusplus/data/raw/MEGIC/leftovers/*_{1,2}.fastq.gz"
+
+nextflow run AMRplusplus/main_AMR++.nf -profile conda --threads 14 --reads "AMRplusplus/data/raw/MEGIC/leftovers/*_R{1,2}.fastq.gz" #IT NEEDS " " APPARANTLY
+
+nextflow run AMRplusplus/main_AMR++.nf -profile conda --reads "AMRplusplus/data/chitino/*.fa"
